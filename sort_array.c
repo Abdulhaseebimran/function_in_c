@@ -1,38 +1,39 @@
-# include <stdio.h>
-# include <conio.h>
-
-void sort (int array[], int size);
-void printArray(int array[], int size);
-void main () {
-
-    int array[] = {9,1,2,4,5,6,7,8,3};
-    //char array[] = {'B', 'S', 'E', 'E', 'A', 'H'};
-    int size = sizeof(array)/sizeof(array[0]); 
-
-    sort(array,size);
-    printArray(array,size);
-
-    getch();
+#include <stdio.h>
+void sort();
+void main()
+	{
+	sort();
 }
 
-void sort (int array[], int size) {
-      for (int  i = 0; i < size - 1; i++)
-      {
-          for (int j = 0; j < size - i - 1; j++)
-          {
-              if(array[j] > array[j+1]){
-                  int temp = array[j];
-                  array[j] = array [j+1];
-                  array[j+1] = temp;
-              }
-          }
-          
-      }
-      
-}
+void sort()
+	{
+	int arr[7]={5,3,2,9,4,0};
+	int i,j,k=0;
+	int a= sizeof(arr)/sizeof(arr[0]);
+	printf("Elements of array: \n");
+	for (i = 0;i<a;i++)
+		{
+		printf("%d ", arr[i]);
+		// getch();
+        // return 0;
+		}
+	for (i=0;i<a;i++)
+		{
+		for (j=i+1;j<a;j++)
+			{
+			if(arr[i] > arr[j])
+				{
+				k = arr[i];
+				arr[i] = arr[j];
+				arr[j] = k;
+				}
+		}
+	}
 
-void printArray (int array[], int size){
-      for (int i = 0 ; i < size ; i++) {
-          printf("%d ", array[i]);
-      }
-}
+	printf("\n");
+	printf("Elements of array sorted in ascending order: \n");
+	for ( i = 0; i < a; i++)
+		{
+		printf("%d ", arr[i]);
+		}
+	}
